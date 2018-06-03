@@ -23,15 +23,19 @@
  
     <script type="text/babel">
 
-        const Banner = () => (
-            <div id="apples">
-                <h1 className="heading">Hello World!</h1>
-                <p className="text">This is me learning React. I just created a stateless functional component. Go me!</p>
-            </div>
-        )
+        class Hello extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>Hello {this.props.firstName}!</h1>
+                        <p>You are currently learning React {this.props.version}!</p>
+                    </div>
+                )
+            }
+        }
 
         ReactDOM.render(
-            <Banner />,
+            <Hello firstName="Matthew" version={16} />,
             document.getElementById('react-container')
         )
 
