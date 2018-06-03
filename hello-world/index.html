@@ -12,6 +12,9 @@
         .heading {
             color: aliceblue
         }
+        .text {
+            color: burlywood
+        }
     </style>
     <title>React Hello World</title>
 </head>
@@ -20,18 +23,15 @@
  
     <script type="text/babel">
 
-        class Hello extends React.Component {
-            render() {
-                return (
-                    <div id="apples">
-                        <h1 className="heading">Hello World!</h1>
-                    </div>
-                )
-            }
-        }
+        const Banner = () => (
+            <div id="apples">
+                <h1 className="heading">Hello World!</h1>
+                <p className="text">This is me learning React. I just created a stateless functional component. Go me!</p>
+            </div>
+        )
 
         ReactDOM.render(
-            <Hello />,
+            <Banner />,
             document.getElementById('react-container')
         )
 
