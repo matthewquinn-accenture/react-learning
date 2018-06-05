@@ -13,6 +13,10 @@ class Board extends Component {
                 {
                     id: 22,
                     note: "GOAT!"
+                },
+                {
+                    id: 11,
+                    note: "YEAHHHH BABY!"
                 }
             ]
         }
