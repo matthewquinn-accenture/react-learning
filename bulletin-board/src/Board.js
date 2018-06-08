@@ -1,29 +1,37 @@
 import React, { Component } from 'react'
 import Note from './Note'
+import FaPlus from 'react-icons/lib/fa/plus'
 
 class Board extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            notes: [
-                {
-                    id: 0,
-                    note: "IQs DA BEST"
-                },
-                {
-                    id: 1,
-                    note: "GOAT!"
-                },
-                {
-                    id: 2,
-                    note: "YEAHHHH BABY!"
-                }
-            ]
+            notes: []
         }
-        this.eachNote = this.eachNote.bind(this)
+        this.add = this.add.bind(this)
+        this.nextId = this.nextId.bind(this)
         this.update = this.update.bind(this)
         this.remove = this.remove.bind(this)
+        this.eachNote = this.eachNote.bind(this)
     }
+
+    add(text) {
+        this.setState(prevState => ({
+            notes: [
+                ...prevState.notes,
+                {
+                    id: this.nextId(),
+                    note: text
+                }
+            ]
+        }))
+
+    }
+
+  nextId() {
+    this.uniqueId = this.uniqueId || 0
+    return this.uniqueId++
+  }
 
     update(newText, i) {
         this.setState(prevState => ({
@@ -53,6 +61,9 @@ class Board extends Component {
         return (
             <div className='board'> 
                 {this.state.notes.map(this.eachNote)}
+                <button type="button" id="add" onClick={this.add.bind(null, "New Note")}>
+                    <FaPlus />
+                </button>
             </div>
         )
     }

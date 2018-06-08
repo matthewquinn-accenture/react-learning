@@ -39,7 +39,7 @@ class Note extends Component {
             <div className="note">
                 <form onSubmit={this.save}>
                     <textarea ref={input => this._newText = input} />
-                    <button id="save"><FaFloppyO /></button>
+                    <button type="button" id="save"><FaFloppyO /></button>
                 </form>
             </div>
         )
@@ -50,8 +50,8 @@ class Note extends Component {
             <div className="note"> 
                 <p>{this.props.children}</p>
                 <span>
-                    <button onClick={this.edit} id="edit"> <FaPencil /> </button>
-                    <button onClick={this.remove} id="remove"> <FaTrash /> </button>
+                    <button type="button" onClick={this.edit} id="edit"> <FaPencil /> </button>
+                    <button type="button" onClick={this.remove} id="remove"> <FaTrash /> </button>
                 </span>
             </div>
         )
