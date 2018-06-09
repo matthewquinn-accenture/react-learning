@@ -36,6 +36,12 @@ class Note extends Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return (
+            this.props.children !== nextProps.children || this.state !== nextProps
+        )
+    }
+
     randomBetween(x, y, s) {
         return x + Math.ceil(Math.random() * (y-x)) + s
     }
