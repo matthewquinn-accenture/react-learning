@@ -38,10 +38,10 @@ class Board extends Component {
 
     }
 
-  nextId() {
-    this.uniqueId = this.uniqueId || 0
-    return this.uniqueId++
-  }
+    nextId() {
+      this.uniqueId = this.uniqueId || 0
+      return this.uniqueId++
+    }
 
     update(newText, i) {
         this.setState(prevState => ({
