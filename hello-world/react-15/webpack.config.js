@@ -21,6 +21,11 @@ module.exports = {
                 query: { /** specifiy the presets we want*/
                     presets: ["latest", "stage-0", "react"] /** using presets in the babelrc */
                 }
+            },
+            {
+                test: /\.json$/,
+                exclude: /(node_modules)/,
+                loader: "json-loader"
             }
         ]
     }

@@ -1,9 +1,10 @@
-const { render } = ReactDOM
+import React from 'react'
+import { render } from 'react-dom'
+import { greeting, farewell } from './lib'
 
 render(
-    <h1 id='title'
-        className='header'
-        style={{backgroundColor: 'purple', color: 'white'}}>
-    Hello World!
-    </h1>, document.getElementById('react-container')
+    <div>
+        {greeting}
+        {farewell}
+    </div>, document.getElementById('react-container')
 )
