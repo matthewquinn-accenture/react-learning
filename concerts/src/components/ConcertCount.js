@@ -1,38 +1,34 @@
-import React from 'react'
 import '../stylesheets/ui.scss'
 
-export class ConcertCount extends React.Component {
-    percentToDecimal(decimal) {
-      return ((decimal * 100) + '%')
-    }
-
-    calcGoalProgress(total, goal) {
-      return this.percentToDecimal(total/goal)
-    }
-
-    render() {
-        return (
-            <div className='concert-count'>
-                <div className='total-concerts'>
-                    <span> {this.props.total} </span>
-                    <span>concerts</span>
-                </div>
-
-                <div className='ohio-concerts'>
-                    <span> {this.props.ohio} </span>
-                    <span>Ohio concerts</span>
-                </div>
-
-                <div className='outdoor-concerts'>
-                    <span> {this.props.outdoor} </span>
-                    <span>outdoor concert</span>
-                </div>
-
-                <div>
-                    <span> {this.calcGoalProgress(this.props.total, this.props.goal)} </span>
-                </div>
-
-            </div>
-        )
-    }
+const percentToDecimal = (decimal) => {
+  return ((decimal * 100) + '%')
 }
+
+const calcGoalProgress = (total, goal) => {
+  return percentToDecimal(total/goal)
+}
+
+export const ConcertCount = (props) => (
+  <div className='concert-count'>
+
+     <div className='total-concerts'>
+         <span> {props.total} </span>
+         <span>concerts</span>
+     </div>
+
+     <div className='ohio-concerts'>
+         <span> {props.ohio} </span>
+         <span>Ohio concerts</span>
+     </div>
+
+     <div className='outdoor-concerts'>
+         <span> {props.outdoor} </span>
+         <span>outdoor concert</span>
+     </div>
+
+     <div>
+         <span> {calcGoalProgress(props.total, props.goal)} </span>
+     </div>
+
+  </div>
+)
