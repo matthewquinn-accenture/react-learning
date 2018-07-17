@@ -6,16 +6,24 @@ export const ConcertCount = React.createClass({
         return (
             <div className='concert-count'>
                 <div className='total-concerts'>
-                    <span>5 concerts</span>
+                    <span> {this.props.total} </span>
+                    <span>concerts</span>
                 </div>
 
                 <div className='ohio-concerts'>
-                    <span>2 Ohio concerts</span>
+                    <span> {this.props.ohio} </span>
+                    <span>Ohio concerts</span>
                 </div>
 
                 <div className='outdoor-concerts'>
-                    <span>1 outdoor concert</span>
+                    <span> {this.props.outdoor} </span>
+                    <span>outdoor concert</span>
                 </div>
+
+                <div>
+                    <span> {this.props.goal} </span>
+                </div>
+
             </div>
         )
     }
