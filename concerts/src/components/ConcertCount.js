@@ -2,6 +2,14 @@ import React from 'react'
 import '../stylesheets/ui.scss'
 
 export const ConcertCount = React.createClass({
+    percentToDecimal(decimal) {
+      return ((decimal * 100) + '%')
+    },
+
+    calcGoalProgress(total, goal) {
+      return this.percentToDecimal(total/goal)
+    },
+
     render() {
         return (
             <div className='concert-count'>
@@ -21,7 +29,7 @@ export const ConcertCount = React.createClass({
                 </div>
 
                 <div>
-                    <span> {this.props.goal} </span>
+                    <span> {this.calcGoalProgress(this.props.total, this.props.goal)} </span>
                 </div>
 
             </div>
