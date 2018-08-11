@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { ConcertCount } from './components/ConcertCount-ES6.js'
+import { ConcertCount } from './components/ConcertCount.js'
 
 window.React = React /** Errors will show if 'React" isn't defined in window */
 
