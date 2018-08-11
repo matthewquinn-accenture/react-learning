@@ -13,10 +13,7 @@ export const ConcertList = ({days}) => (
       <tbody>
             {days.map((day, i) =>
               <ConcertRow key={i}
-                          concert={day.concert}
-                          date={day.date}
-                          ohio={day.ohio}
-                          outdoor={day.outdoor} />
+                      {...day} />
             )}
       </tbody>
 
