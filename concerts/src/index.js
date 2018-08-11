@@ -1,16 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { ConcertCount } from './components/ConcertCount.js'
+import { ConcertList } from './components/ConcertList.js'
 
 window.React = React /** Errors will show if 'React" isn't defined in window */
 
 render(
-  <ConcertCount />,
-  document.getElementById('react-container')
-)
-
-
-/* render(
     <ConcertList days={
       [
         {
@@ -34,4 +28,4 @@ render(
       ]
     }
     />, document.getElementById('react-container')
-) **/
+)
