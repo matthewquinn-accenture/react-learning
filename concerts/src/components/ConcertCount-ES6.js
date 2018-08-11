@@ -1,3 +1,4 @@
+import { PropTypes } from 'react'
 import '../stylesheets/ui.scss'
 
 const percentToDecimal = (decimal) => {
@@ -38,4 +39,11 @@ ConcertCount.defaultProps = {
   ohio: 5,
   outdoor: 17,
   goal: 75
+}
+
+ConcertCount.propTypes = {
+  total: PropTypes.number,
+  ohio: PropTypes.number,
+  outdoor: PropTypes.number,
+  goal: PropTypes.number
 }
