@@ -1,7 +1,14 @@
-import { createClass } from 'react'
+import { createClass, PropTypes } from 'react'
 import '../stylesheets/ui.scss'
 
 export const ConcertCount = createClass({
+  propTypes: {
+    total: PropTypes.number.isRequired,
+    ohio: PropTypes.number.isRequired,
+    outdoor: PropTypes.number.isRequired,
+    goal: PropTypes.number.isRequired
+  },
+
   getDefaultProps() {
     return {
       total: 50,
