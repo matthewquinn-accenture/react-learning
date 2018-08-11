@@ -34,8 +34,8 @@ export const ConcertCount = (props) => (
 )
 
 ConcertCount.defaultProps = {
-    total: 50,
-    ohio: 5,
-    outdoor: 17,
-    goal: 75
+  total: 50,
+  ohio: 5,
+  outdoor: 17,
+  goal: 75
 }
