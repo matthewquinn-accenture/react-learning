@@ -8,34 +8,27 @@ const calcGoalProgress = (total, goal) => {
   return percentToDecimal(total/goal)
 }
 
-export const ConcertCount = (props) => (
+export const ConcertCount = ({total=70, ohio=15, outdoor=10, goal=100}) => (
   <div className='concert-count'>
 
      <div className='total-concerts'>
-         <span> {props.total} </span>
+         <span> {total} </span>
          <span>concerts</span>
      </div>
 
      <div className='ohio-concerts'>
-         <span> {props.ohio} </span>
+         <span> {ohio} </span>
          <span>Ohio concerts</span>
      </div>
 
      <div className='outdoor-concerts'>
-         <span> {props.outdoor} </span>
+         <span> {outdoor} </span>
          <span>outdoor concert</span>
      </div>
 
      <div>
-         <span> {calcGoalProgress(props.total, props.goal)} </span>
+         <span> {calcGoalProgress(total, goal)} </span>
      </div>
 
   </div>
 )
-
-ConcertCount.defaultProps = {
-    total: 50,
-    ohio: 5,
-    outdoor: 17,
-    goal: 75
-}
