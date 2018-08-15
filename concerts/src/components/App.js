@@ -1,4 +1,6 @@
 import { createClass } from 'react'
+import { ConcertList } from './ConcertList.js'
+import { ConcertCount } from './ConcertCount.js'
 
 export const App = createClass({
   getInitialState() {
@@ -8,28 +10,41 @@ export const App = createClass({
           concert: "Dreamville",
           date: new Date("1/2/2018"),
           ohio: "Yes",
-          outdoor: "No"
+          outdoor: ""
         },
         {
           concert: "DreamvilleFest",
           date: new Date("1/2/2018"),
-          ohio: "No",
+          ohio: "",
           outdoor: "Yes"
         },
         {
           concert: "Dreamville JID",
           date: new Date("1/2/2018"),
-          ohio: "No",
-          outdoor: "No"
+          ohio: "Yes",
+          outdoor: ""
         }
       ]
     }
   },
+  countDays(filter) {
+    const { allConcertDays } = this.state
+    /* Filter the state to get the total count of each filter.
+    If a filter is passed, count how many are marked.
+    If a filter isn't passed, return the number of days.
+
+    The "RETURN" represents a callback function.
+    **/
+		return allConcertDays.filter((day) => (filter) ? day[filter] : day).length
+	},
   render() {
     return (
       <div className="app">
-				{this.state.allConcertDays[0]["concert"]}
-			</div>
+           <ConcertList  days={this.state.allConcertDays} />
+           <ConcertCount total={this.countDays()}
+                  ohio={this.countDays("ohio")}
+                  outdoor={this.countDays("outdoor")} />
+      </div>
     )
   }
 })
