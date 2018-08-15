@@ -1,4 +1,5 @@
 import { ConcertRow } from './ConcertRow.js'
+import { PropTypes } from 'react'
 
 export const ConcertList = ({days}) => (
   <table>
@@ -19,3 +20,19 @@ export const ConcertList = ({days}) => (
 
   </table>
 )
+
+ConcertList.propTypes = {
+  days: function(props) {
+    if(!Array.isArray(props.days)) {
+      return new Error(
+        "ConcertList should be an array"
+      )
+    } else if (!props.days.length) {
+      return new Error(
+        "ConcertList must have at least one record"
+      )
+    } else {
+      return null
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import { PropTypes } from 'react'
+
 export const ConcertRow = ({concert, date, ohio, outdoor}) => (
 
   <tr>
@@ -8,3 +10,10 @@ export const ConcertRow = ({concert, date, ohio, outdoor}) => (
   </tr>
 
 )
+
+ConcertRow.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+  concert: PropTypes.string,
+  ohio: PropTypes.string,
+  outdoor: PropTypes.string
+}
