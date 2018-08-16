@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { ConcertList } from './ConcertList.js'
 import { ConcertCount } from './ConcertCount.js'
+import { AddConcertForm } from './AddConcertForm.js'
 
 export class App extends Component {
   constructor(props) {
@@ -43,10 +44,15 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
-           <ConcertList  days={this.state.allConcertDays} />
-           <ConcertCount total={this.countDays()}
-                  ohio={this.countDays("ohio")}
-                  outdoor={this.countDays("outdoor")} />
+      {(this.props.location.pathname === "/") ?
+
+      <ConcertCount total={this.countDays()}
+          ohio={this.countDays("ohio")}
+          outdoor={this.countDays("outdoor")} /> :
+        (this.props.location.pathname === "/add-concert") ?
+         <AddConcertForm /> :
+         <ConcertList  days={this.state.allConcertDays} />
+      }
       </div>
     )
   }
