@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Menu } from './Menu.js'
 import { ConcertList } from './ConcertList.js'
 import { ConcertCount } from './ConcertCount.js'
 import { AddConcertForm } from './AddConcertForm.js'
@@ -44,6 +45,7 @@ export class App extends Component {
   render() {
     return (
       <div className="app">
+      <Menu />
       {(this.props.location.pathname === "/") ?
 
       <ConcertCount total={this.countDays()}
