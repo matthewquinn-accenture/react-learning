@@ -1,10 +1,11 @@
-import { createClass } from 'react'
+import { Component } from 'react'
 import { ConcertList } from './ConcertList.js'
 import { ConcertCount } from './ConcertCount.js'
 
-export const App = createClass({
-  getInitialState() {
-    return {
+export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
       allConcertDays: [
         {
           concert: "Dreamville",
@@ -26,7 +27,8 @@ export const App = createClass({
         }
       ]
     }
-  },
+  }
+
   countDays(filter) {
     const { allConcertDays } = this.state
     /* Filter the state to get the total count of each filter.
@@ -36,7 +38,8 @@ export const App = createClass({
     The "RETURN" represents a callback function.
     **/
 		return allConcertDays.filter((day) => (filter) ? day[filter] : day).length
-	},
+	}
+
   render() {
     return (
       <div className="app">
@@ -47,4 +50,4 @@ export const App = createClass({
       </div>
     )
   }
-})
+}
