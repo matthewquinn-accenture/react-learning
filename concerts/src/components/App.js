@@ -53,7 +53,8 @@ export class App extends Component {
           outdoor={this.countDays("outdoor")} /> :
         (this.props.location.pathname === "/add-concert") ?
          <AddConcertForm /> :
-         <ConcertList  days={this.state.allConcertDays} />
+         <ConcertList  days={this.state.allConcertDays}
+                       filter={this.props.params.filter}/>
       }
       </div>
     )
